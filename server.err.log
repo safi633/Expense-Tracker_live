@@ -1,0 +1,9 @@
+JWT_SECRET is missing in .env; using a temporary development secret for this run.
+JWT_SECRET is missing in .env; using a temporary development secret for this run.
+JWT_SECRET is missing in .env; using a temporary development secret for this run.
+JWT_SECRET is missing in .env; using a temporary development secret for this run.
+JWT_SECRET is missing in .env; using a temporary development secret for this run.
+(node:3464) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3464) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:3464) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.

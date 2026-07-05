@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="auth-page active" id="loginPage">
+    <div class="glass-card">
+      <div class="auth-left">
+        <div class="auth-title">Expense Tracker</div>
+        <div class="auth-subtitle">Manage your expenses smartly</div>
+        <input class="auth-input" id="loginUser" type="text" placeholder="Username or Gmail" autocomplete="username" />
+        <input class="auth-input" id="loginPass" type="password" placeholder="Password" autocomplete="current-password" />
+        <button class="grad-btn" onclick="doLogin()">LOGIN</button>
+        <div class="auth-switch">Don't have an account? <a onclick="showPage('signupPage')">Sign up</a></div>
+      </div>
+      <div class="auth-right">
+        <h2>Welcome Back</h2>
+        <ul>
+          <li>• Track daily expenses</li>
+          <li>• Create monthly budgets</li>
+          <li>• Analyze your spending</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-page" id="signupPage">
+    <div class="glass-card">
+      <div class="auth-left">
+        <div class="auth-title">Create Account</div>
+        <div class="auth-subtitle">Start managing your finances today</div>
+        <input class="auth-input" id="suName" type="text" placeholder="Full Name" autocomplete="name" minlength="2" maxlength="60" />
+        <input class="auth-input" id="suEmail" type="email" placeholder="Gmail Address" autocomplete="email" pattern="^[a-z0-9](?:[a-z0-9._%+\-]{0,62}[a-z0-9])?@gmail\.com$" />
+        <input class="auth-input" id="suUser" type="text" placeholder="Username" autocomplete="username" minlength="3" maxlength="24" pattern="^[a-z0-9_]{3,24}$" />
+        <input class="auth-input" id="suPass" type="password" placeholder="Password" autocomplete="new-password" minlength="8" maxlength="72" />
+        <button class="grad-btn" onclick="doSignup()">CREATE ACCOUNT</button>
+        <div class="auth-switch">Already have an account? <a onclick="showPage('loginPage')">Login</a></div>
+      </div>
+      <div class="auth-right">
+        <h2>Why Expense Tracker?</h2>
+        <ul>
+          <li>• Track daily expenses effortlessly</li>
+          <li>• Create and manage monthly budgets</li>
+          <li>• Analyze spending patterns & insights</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="app">
+    <div class="app-header">
+      <div class="app-header-title">💰 Expense Tracker</div>
+      <button class="dots-btn" onclick="showAbout()" title="About">••••</button>
+    </div>
+    <div class="app-body">
+      <nav class="sidebar">
+        <button class="nav-btn active" onclick="switchTab('dashboard', this)">🏠 <span>Dashboard</span></button>
+        <button class="nav-btn" onclick="switchTab('expenses', this)">💸 <span>Expenses</span></button>
+        <button class="nav-btn" onclick="switchTab('categories', this)">🏷️ <span>Categories</span></button>
+        <button class="nav-btn" onclick="switchTab('budget', this)">🎯 <span>Budgets</span></button>
+        <button class="nav-btn" onclick="switchTab('reports', this)">📊 <span>Reports</span></button>
+        <button class="nav-btn" onclick="switchTab('profile', this)">👤 <span>Profile</span></button>
+        <button class="nav-btn" onclick="switchTab('settings', this)">⚙️ <span>Settings</span></button>
+        <div class="spacer"></div>
+        <button class="nav-btn" onclick="doLogout()" style="color:#ff7675;">🚪 <span>Logout</span></button>
+      </nav>
+      <div class="content" id="content"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="aboutModal">
+    <div class="modal">
+      <h3>Why Track Your Expenses?</h3>
+      <p>Tracking expenses is key to financial success. It helps you:</p>
+      <ul>
+        <li>Gain clear insight into your spending habits</li>
+        <li>Identify and reduce unnecessary expenses</li>
+        <li>Create realistic and effective budgets</li>
+      </ul>
+      <button class="modal-close" onclick="closeAbout()">Close</button>
+    </div>
+  </div>
+
+  <div class="confirm-overlay" id="confirmDialog">
+    <div class="confirm-box">
+      <p id="confirmMsg">Are you sure?</p>
+      <div class="confirm-btns">
+        <button class="btn btn-blue" onclick="confirmYes()">Yes</button>
+        <button class="btn" style="background:#999" onclick="confirmNo()">No</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
